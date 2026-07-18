@@ -1,0 +1,7 @@
+[
+  { "route": "4", "origin": "Dublin", "destination": "Swords" },
+  { "route": "7", "origin": "Dublin", "destination": "Loughlinstown" },
+  { "route": "16", "origin": "Dublin", "destination": "Ballinteer" },
+  { "route": "27", "origin": "Dublin", "destination": "Clondalkin" },
+  { "route": "46A", "origin": "Dublin", "destination": "Dun Laoghaire" }
+]
