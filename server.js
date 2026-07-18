@@ -30,4 +30,3 @@ app.get("/journey", (req, res) => {
 app.listen(PORT, () => {
   console.log("Journey planner running on port", PORT);
 });
-
