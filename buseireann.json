@@ -1,0 +1,8 @@
+[
+  { "route": "X8", "origin": "Dublin", "destination": "Cork" },
+  { "route": "100X", "origin": "Dublin", "destination": "Dundalk" },
+  { "route": "22", "origin": "Dublin", "destination": "Ballina" },
+  { "route": "23", "origin": "Dublin", "destination": "Sligo" },
+  { "route": "64", "origin": "Galway", "destination": "Sligo" },
+  { "route": "51", "origin": "Cork", "destination": "Limerick" }
+]
