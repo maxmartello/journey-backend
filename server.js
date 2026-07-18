@@ -5,9 +5,9 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const dublinBus = JSON.parse(fs.readFileSync("./routes.json", "utf8"));
-const busEireann = JSON.parse(fs.readFileSync("./buseireann.json", "utf8"));
+const busEireann = JSON.parse(fs.readFileSync("./busEireann.json", "utf8"));
 const expressway = JSON.parse(fs.readFileSync("./expressway.json", "utf8"));
-const irishRail = JSON.parse(fs.readFileSync("./irishrail.json", "utf8"));
+const irishRail = JSON.parse(fs.readFileSync("./irishRail.json", "utf8"));
 
 app.get("/journey", (req, res) => {
   const { origin, destination } = req.query;
