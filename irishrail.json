@@ -1,0 +1,7 @@
+[
+  { "route": "Intercity", "origin": "Dublin", "destination": "Cork" },
+  { "route": "Intercity", "origin": "Dublin", "destination": "Galway" },
+  { "route": "Intercity", "origin": "Dublin", "destination": "Limerick" },
+  { "route": "Intercity", "origin": "Dublin", "destination": "Waterford" },
+  { "route": "Intercity", "origin": "Dublin", "destination": "Sligo" }
+]
