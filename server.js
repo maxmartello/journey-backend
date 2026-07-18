@@ -27,7 +27,7 @@ app.get("/journey", (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log("Journey planner running on port", PORT);
 });
 
