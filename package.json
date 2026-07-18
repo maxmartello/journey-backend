@@ -1,6 +1,7 @@
 {
   "name": "journey-backend",
   "version": "1.0.1",
+  "buildId": "force-rebuild-001",
   "type": "module",
   "main": "server.js",
   "scripts": {
