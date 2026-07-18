@@ -1,9 +1,12 @@
-import http from "http";
+import express from "express";
 
-const server = http.createServer((req, res) => {
-  res.end("Backend is running");
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.get("/", (req, res) => {
+  res.send("Journey backend is running");
 });
 
-server.listen(process.env.PORT || 3000, () => {
-  console.log("Server started");
+app.listen(PORT, () => {
+  console.log("Server running on port", PORT);
 });
