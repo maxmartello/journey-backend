@@ -4,7 +4,7 @@ import path from "path";
 
 const app = express();
 
-// Load JSON files from root folder
+// Load JSON files from the root of the repo
 const dublinBus = JSON.parse(fs.readFileSync(path.join(process.cwd(), "routes.json")));
 const busEireann = JSON.parse(fs.readFileSync(path.join(process.cwd(), "busEireann.json")));
 const expressway = JSON.parse(fs.readFileSync(path.join(process.cwd(), "expressway.json")));
@@ -36,7 +36,7 @@ app.get("/journey", (req, res) => {
   res.json(result);
 });
 
-// Railway port
+// Railway port binding
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Journey planner running on port ${PORT}`);
