@@ -1,33 +1,43 @@
 import express from "express";
 import fs from "fs";
+import path from "path";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-const dublinBus = JSON.parse(fs.readFileSync("./routes.json", "utf8"));
-const busEireann = JSON.parse(fs.readFileSync("./busEireann.json", "utf8"));
-const expressway = JSON.parse(fs.readFileSync("./expressway.json", "utf8"));
-const irishRail = JSON.parse(fs.readFileSync("./irishRail.json", "utf8"));
+// Load JSON data
+const dublinBus = JSON.parse(fs.readFileSync(path.join("data", "dublinBus.json")));
+const busEireann = JSON.parse(fs.readFileSync(path.join("data", "busEireann.json")));
+const expressway = JSON.parse(fs.readFileSync(path.join("data", "expressway.json")));
+const irishRail = JSON.parse(fs.readFileSync(path.join("data", "irishRail.json")));
 
+// Journey endpoint
 app.get("/journey", (req, res) => {
   const { origin, destination } = req.query;
 
-  const match = (list) =>
-    list.filter(
-      (r) =>
-        r.origin.toLowerCase() === origin.toLowerCase() &&
-        r.destination.toLowerCase() === destination.toLowerCase()
-    );
+  const result = {
+    dublinBus: dublinBus.filter(
+      r => r.origin.toLowerCase() === origin.toLowerCase() &&
+           r.destination.toLowerCase() === destination.toLowerCase()
+    ),
+    busEireann: busEireann.filter(
+      r => r.origin.toLowerCase() === origin.toLowerCase() &&
+           r.destination.toLowerCase() === destination.toLowerCase()
+    ),
+    expressway: expressway.filter(
+      r => r.origin.toLowerCase() === origin.toLowerCase() &&
+           r.destination.toLowerCase() === destination.toLowerCase()
+    ),
+    irishRail: irishRail.filter(
+      r => r.origin.toLowerCase() === origin.toLowerCase() &&
+           r.destination.toLowerCase() === destination.toLowerCase()
+    )
+  };
 
-  res.json({
-    dublinBus: match(dublinBus),
-    busEireann: match(busEireann),
-    expressway: match(expressway),
-    irishRail: match(irishRail)
-  });
+  res.json(result);
 });
 
-app.listen(PORT, "0.0.0.0", () => {
-  console.log("Journey planner running on port", PORT);
+// REQUIRED FOR RAILWAY
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Journey planner running on port ${PORT}`);
 });
-
