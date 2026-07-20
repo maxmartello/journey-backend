@@ -4,11 +4,11 @@ import path from "path";
 
 const app = express();
 
-// Load JSON data
-const dublinBus = JSON.parse(fs.readFileSync(path.join("data", "dublinBus.json")));
-const busEireann = JSON.parse(fs.readFileSync(path.join("data", "busEireann.json")));
-const expressway = JSON.parse(fs.readFileSync(path.join("data", "expressway.json")));
-const irishRail = JSON.parse(fs.readFileSync(path.join("data", "irishRail.json")));
+// Load JSON files from root folder
+const dublinBus = JSON.parse(fs.readFileSync(path.join(process.cwd(), "routes.json")));
+const busEireann = JSON.parse(fs.readFileSync(path.join(process.cwd(), "busEireann.json")));
+const expressway = JSON.parse(fs.readFileSync(path.join(process.cwd(), "expressway.json")));
+const irishRail = JSON.parse(fs.readFileSync(path.join(process.cwd(), "irishRail.json")));
 
 // Journey endpoint
 app.get("/journey", (req, res) => {
@@ -36,7 +36,7 @@ app.get("/journey", (req, res) => {
   res.json(result);
 });
 
-// REQUIRED FOR RAILWAY
+// Railway port
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Journey planner running on port ${PORT}`);
