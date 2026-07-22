@@ -1,7 +1,45 @@
 [
-  { "route": "4", "origin": "Dublin", "destination": "Swords" },
-  { "route": "7", "origin": "Dublin", "destination": "Loughlinstown" },
-  { "route": "16", "origin": "Dublin", "destination": "Ballinteer" },
-  { "route": "27", "origin": "Dublin", "destination": "Clondalkin" },
-  { "route": "46A", "origin": "Dublin", "destination": "Dun Laoghaire" }
+  {
+    "operator": "Dublin Bus",
+    "route": "4",
+    "stops": ["Dublin", "Swords"]
+  },
+  {
+    "operator": "Dublin Bus",
+    "route": "16",
+    "stops": ["Dublin", "Santry", "Swords"]
+  },
+
+  {
+    "operator": "Bus Éireann",
+    "route": "30",
+    "stops": ["Dublin", "Athlone", "Galway"]
+  },
+  {
+    "operator": "Bus Éireann",
+    "route": "64",
+    "stops": ["Galway", "Sligo", "Donegal"]
+  },
+
+  {
+    "operator": "Expressway",
+    "route": "X8",
+    "stops": ["Dublin", "Portlaoise", "Cork"]
+  },
+  {
+    "operator": "Expressway",
+    "route": "X51",
+    "stops": ["Cork", "Limerick", "Galway"]
+  },
+
+  {
+    "operator": "Irish Rail",
+    "route": "IR_DUB_GAL",
+    "stops": ["Dublin", "Athlone", "Galway"]
+  },
+  {
+    "operator": "Irish Rail",
+    "route": "IR_GAL_SLG",
+    "stops": ["Galway", "Sligo"]
+  }
 ]
